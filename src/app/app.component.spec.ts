@@ -2,6 +2,26 @@ import { TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
 
+
+import "../scss/app.scss";
+
+// AdminKit (required)
+import "./modules/bootstrap";
+import "./modules/sidebar";
+import "./modules/theme";
+import "./modules/feather";
+
+// Charts
+import "./modules/chartjs";
+
+// Forms
+import "./modules/flatpickr";
+
+// Maps
+import "./modules/vector-maps";
+
+
+
 describe('AppComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({

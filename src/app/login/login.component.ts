@@ -4,7 +4,8 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.scss']
+  // styleUrls: ['./login.component.scss']
+  styleUrls: ['./css/app.css']
 })
 export class LoginComponent implements OnInit {
   formularioCreado:FormGroup;
