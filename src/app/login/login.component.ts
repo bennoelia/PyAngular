@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Empresa } from '../empresa';
+import { EmpresasService } from '../empresas.service';
 
 @Component({
   selector: 'app-login',
@@ -9,12 +11,15 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class LoginComponent implements OnInit {
   formularioCreado:FormGroup;
-  constructor(private formBuilder:FormBuilder) { 
-   
-  }
+  empresa: Empresa; 
+  nombre:String;
+  constructor(private formBuilder:FormBuilder, private empresaService:EmpresasService) { } 
 
   ngOnInit(): void {
     this.crearFormulario();
+    this.empresaService.getEmpresa().subscribe(
+      e=>this.empresa=e);
+      this.nombre=this.empresa.CUIT;
   }
 
   crearFormulario()
