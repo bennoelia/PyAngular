@@ -11,16 +11,20 @@ import { EmpresasService } from '../empresas.service';
 })
 export class LoginComponent implements OnInit {
   formularioCreado:FormGroup;
-  empresa: Empresa; 
+  empresa: Empresa;
+  // =new Empresa(); 
   nombre:String;
   constructor(private formBuilder:FormBuilder, private empresaService:EmpresasService) { } 
 
   ngOnInit(): void {
     this.crearFormulario();
+    console.log("entro1");
     this.empresaService.getEmpresa().subscribe(
-      e=>this.empresa=e);
-      this.nombre=this.empresa.CUIT;
-  }
+      e=>console.log(e));
+      
+      // this.nombre=this.empresa.CUIT;
+      // console.log(this.nombre);
+		  }
 
   crearFormulario()
   {
